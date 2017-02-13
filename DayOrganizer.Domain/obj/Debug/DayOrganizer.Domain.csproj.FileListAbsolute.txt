@@ -1,0 +1,10 @@
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\DayOrganizer.Domain.dll.config
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\DayOrganizer.Domain.dll
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\DayOrganizer.Domain.pdb
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\EntityFramework.dll
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\EntityFramework.xml
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\obj\Debug\DayOrganizer.Domain.csprojResolveAssemblyReference.cache
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\obj\Debug\DayOrganizer.Domain.dll
+c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Domain\obj\Debug\DayOrganizer.Domain.pdb

@@ -10,6 +10,10 @@ namespace DayOrganizer.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Moq;
+    using Domain.Abstract;
+    using System.Collections.Generic;
+    using Domain.Entities;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +65,12 @@ namespace DayOrganizer.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            Mock<ITaskRepository> mock = new Mock<ITaskRepository>();
+            mock.Setup(e => e.Tasks).Returns(new List<Task>
+            {
+                new Task {Title="get up early", FullDescription="get up at 6.00", StartDate=DateTime.Now,EndDate = DateTime.Now,CurrentStatus = "Active" },
+            });
+            kernel.Bind<ITaskRepository>().ToConstant(mock.Object);
         }        
     }
 }
