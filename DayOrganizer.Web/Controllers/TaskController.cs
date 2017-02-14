@@ -18,6 +18,7 @@ namespace DayOrganizer.Web.Controllers
         // GET: Task
         public ActionResult Index()
         {
+            var x = Repository.Tasks;
             return View(Repository.Tasks);
         }
     }

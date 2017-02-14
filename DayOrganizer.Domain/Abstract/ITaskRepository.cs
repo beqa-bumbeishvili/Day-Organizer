@@ -8,6 +8,6 @@ namespace DayOrganizer.Domain.Abstract
 {
     public interface ITaskRepository
     {
-        IEnumerable<Task>Tasks { get; set; }
+        IEnumerable<Task>Tasks { get;}
     }
 }
