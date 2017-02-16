@@ -21,5 +21,12 @@ namespace DayOrganizer.Web.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Register(string username, string password, string email)
+        {
+            return View();
+        }
     }
 }
