@@ -7,7 +7,7 @@ using DayOrganizer.Domain.Entities;
 
 namespace DayOrganizer.Domain.Concrete
 {
-    class EFDbContext : DbContext
+    public class EFDbContext : DbContext
     {
         public DbSet<Task> Tasks { get; set; }
 
