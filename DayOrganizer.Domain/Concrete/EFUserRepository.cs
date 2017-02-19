@@ -9,22 +9,14 @@ using DayOrganizer.Domain.Concrete;
 
 namespace DayOrganizer.Domain.Concrete
 {
-    public class EFTaskRepository : ITaskRepository
+    public class EFUserRepository : IUserRepository
     {
-        private readonly EFDbContext context = new EFDbContext();
-        public IEnumerable<Task> Tasks
-        {
-            get
-            {
-                return context.Tasks;
-            }
-        }
-
+        private readonly EFDbContext db = new EFDbContext();
         public IEnumerable<User> Users
         {
             get
             {
-                throw new NotImplementedException();
+                return db.Users;
             }
         }
     }

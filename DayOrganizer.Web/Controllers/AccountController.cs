@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DayOrganizer.Domain.Concrete;
+using DayOrganizer.Web.Models;
 
 namespace DayOrganizer.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        private EFDbContext db = new EFDbContext();
+        EFDbModel db = new EFDbModel();
         [AllowAnonymous]
         public ActionResult Login()
         {
-            var testVar = db.Tasks.ToList();
+            var testVar = db.Users.ToList();
             return View();
         }
 

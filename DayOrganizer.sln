@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOrganizer.Domain", "DayOrganizer.Domain\DayOrganizer.Domain.csproj", "{BDBBFBD3-CD26-42DF-A969-ECC4829E648F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOrganizer.Web", "DayOrganizer.Web\DayOrganizer.Web.csproj", "{5EBE7326-14AC-4A34-B538-9DF29C4D8317}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BDBBFBD3-CD26-42DF-A969-ECC4829E648F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDBBFBD3-CD26-42DF-A969-ECC4829E648F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDBBFBD3-CD26-42DF-A969-ECC4829E648F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDBBFBD3-CD26-42DF-A969-ECC4829E648F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EBE7326-14AC-4A34-B538-9DF29C4D8317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5EBE7326-14AC-4A34-B538-9DF29C4D8317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EBE7326-14AC-4A34-B538-9DF29C4D8317}.Release|Any CPU.ActiveCfg = Release|Any CPU

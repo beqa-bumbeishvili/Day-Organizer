@@ -1,4 +1,3 @@
-c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\obj\Debug\DayOrganizer.Web.csprojResolveAssemblyReference.cache
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\roslyn\csc.exe
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -15,7 +14,6 @@ c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganiz
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\DayOrganizer.Web.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\DayOrganizer.Web.pdb
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\Castle.Core.dll
-c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\DayOrganizer.Domain.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\EntityFramework.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\EntityFramework.SqlServer.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -31,7 +29,6 @@ c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganiz
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\System.Web.Webpages.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\System.Web.Webpages.Razor.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\WebActivatorEx.dll
-c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\DayOrganizer.Domain.pdb
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\Castle.Core.xml
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\EntityFramework.xml
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\EntityFramework.SqlServer.xml
