@@ -45,3 +45,4 @@ c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganiz
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\bin\System.Web.Mvc.xml
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\obj\Debug\DayOrganizer.Web.dll
 c:\users\user_beqa\documents\visual studio 2015\Projects\DayOrganizer\DayOrganizer.Web\obj\Debug\DayOrganizer.Web.pdb
+C:\Users\user_beqa\Documents\Visual Studio 2015\Projects\DayOrganizer\DayOrganizer.Web\obj\Debug\DayOrganizer.Web.csprojResolveAssemblyReference.cache

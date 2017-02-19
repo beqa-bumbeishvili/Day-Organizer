@@ -1,12 +1,139 @@
 ﻿@model IEnumerable<DayOrganizer.Web.Models.Tasks>
+<style>
+    #newEventHolder {
+        margin-left: 20%;
+        margin-top: 2%;
+        width: 60%;
+        height: 100px;
+        border: 3px dashed #85b9e4;
+        text-align: center;
+        line-height: 4;
+        font-size: 24px;
+        cursor: pointer;
+        color: #85b9e4;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
 
-@{
-    ViewBag.Title = "Index";
-}
+    #eventHolder {
+        margin-left: 17.2%;
+        margin-top: 2%;
+        padding: 17px 15px;
+        margin-bottom: 10px;
+        background: #C4DDF2;
+        width: 62%;
+        height: 100px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        list-style-type: none;
+    }
 
-@foreach (var item in Model)
-{
-    <p>@item.StartDate</p>
-}
+        #eventHolder .event-date-holder {
+            float: left;
+            background: #A7C1D9;
+            margin-right: 20px;
+            padding: 10px;
+            width: 50px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0px 1px 0px 0px #d9e9f7;
+        }
 
+        #eventHolder .event-details-holder {
+            float: left;
+            width: 520px;
+            line-height: 3.2;
+        }
 
+        #eventHolder .event-date-holder #dateNumber {
+            display: block;
+            font-size: 30px;
+            font-weight: 700;
+            color: #0C1726;
+        }
+
+        #eventHolder .event-date-holder #dateDay {
+            text-transform: uppercase;
+        }
+
+        #eventHolder .event-details-holder h1 {
+            float: left;
+            margin-right: 30px;
+            vertical-align: bottom;
+            font-size: 20px;
+            font-weight: 600;
+            color: #244674;
+        }
+
+        #eventHolder .event-details-holder span#eventDescription {
+            position: relative;
+            padding-top: 4px;
+            color: #0f2b42;
+            float: left;
+            font-size: 18px;
+        }
+
+        #eventHolder .event-details-holder ul#editTools {
+            float: right;
+            margin: 0px 0px 00px 10px;
+            padding: 0px;
+        }
+
+    reset.min.css:1 ol, ul {
+        list-style: none;
+    }
+
+    #eventHolder .event-details-holder ul#editTools li {
+        display: inline;
+        margin-right: 15px;
+        padding-top: 5px;
+        font-size: 20px;
+        color: #5ca1db;
+    }
+
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+    }
+
+    #eventHolder .event-details-holder span#eventDescription {
+        position: relative;
+        padding-top: 4px;
+        color: #0f2b42;
+        float: left;
+        font-size: 18px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div id="newEventHolder">
+    <span><i class="fa fa-plus"></i> Add New Event</span>
+</div>
+
+<ul>
+    @foreach (var task in Model)
+    {
+    <li id="eventHolder">
+        <div class="event-date-holder">
+            <span id="dateNumber">23</span>
+            <span id="dateDay">Jan</span>
+        </div>
+        <div class="event-details-holder">
+            <h1>@task.Title</h1>
+            <span id="eventDescription"> @task.FullDescription </span>
+            <div style="position:absolute; left:900px;">
+                <ul id="editTools">
+                    <li><i class="fa fa-pencil-square-o"></i></li>
+                    <li><i class="fa fa-bars"></i></li>
+                    <li><i class="fa fa-times" id="removeEvent"></i></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    }
+</ul>
