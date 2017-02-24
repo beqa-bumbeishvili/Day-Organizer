@@ -16,5 +16,13 @@ namespace DayOrganizer.Web.Controllers
             var x = db.Tasks;
             return View(x);
         }
+
+        [HttpPost]
+        public ActionResult Index(string eventDate, string eventTitle, string eventDescription)
+        {
+
+            return View();
+        }
+
     }
 }

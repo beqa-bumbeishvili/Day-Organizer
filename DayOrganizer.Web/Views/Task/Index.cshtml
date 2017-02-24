@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DayOrganizer.Web.Models.Tasks>
+﻿
+@model IEnumerable<DayOrganizer.Web.Models.Tasks>
 <style>
     #newEventHolder {
         margin-left: 20%;
@@ -112,32 +113,177 @@
         float: left;
         font-size: 18px;
     }
+
+    #newEventForm {
+        width: 400px;
+        padding: 15px;
+        margin-left: 20%;
+        box-sizing: border-box;
+        display: block;
+    }
+
+        #newEventForm label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #244674;
+        }
+
+        #newEventForm input[type="text"] {
+            padding-left: 15px;
+            margin-bottom: 20px;
+            height: 50px;
+            width: 100%;
+            line-height: 1.875;
+            font-size: 16px;
+            color: #A7C1D9;
+            border: 2px solid #C4DDF2;
+            outline: 0;
+            box-sizing: border-box;
+            background: #f6fafd;
+        }
+
+        #newEventForm textarea {
+            margin-bottom: 20px;
+            padding: 5px;
+            height: 120px;
+            width: 100%;
+            line-height: 1.875;
+            font-size: 16px;
+            color: #A7C1D9;
+            border: 2px solid #C4DDF2;
+            outline: 0;
+            box-sizing: border-box;
+            border-radius: 3px;
+            background: #f6fafd;
+        }
+
+    textarea {
+        font-family: monospace;
+        border-color: rgb(169, 169, 169);
+    }
+
+    textarea {
+        -webkit-appearance: textarea;
+        background-color: white;
+        -webkit-rtl-ordering: logical;
+        user-select: text;
+        flex-direction: column;
+        resize: auto;
+        cursor: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-width: 1px;
+        border-style: solid;
+        border-color: initial;
+        border-image: initial;
+        padding: 2px;
+    }
+
+    input, textarea, keygen, select, button {
+        text-rendering: auto;
+        color: initial;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        margin: 0em 0em 0em 0em;
+        font: 13.3333px Arial;
+    }
+
+    input, textarea, keygen, select, button, meter, progress {
+        -webkit-writing-mode: horizontal-tb;
+    }
+
+    #newEventForm button {
+        margin-right: 10px;
+        padding: 0 15px;
+        background: #849EBF;
+        color: #eef5fb;
+        font-size: 16px;
+        font-weight: 400;
+        border: 0;
+        outline: 0;
+        line-height: 3.5;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        #newEventForm button#cancelAddEvent {
+            background: #d9e9f7;
+            color: #4c6a91;
+            cursor: pointer;
+        }
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#newEventHolder').click(function () {
+            $('.event-list-wrapper').toggleClass('top-margin-animation');
+            if ($('.event-list-wrapper').hasClass('top-margin-animation')) {
+                $('.event-list-wrapper').animate({ 'margin-top': "300px" });
+            }
+            else { $('.event-list-wrapper').animate({ 'margin-top': "0px" }); }
+        });
+
+
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                language: 'pt-BR'
+            });
+        });
+    });
+</script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <div id="newEventHolder">
     <span><i class="fa fa-plus"></i> Add New Event</span>
 </div>
 
-<ul>
-    @foreach (var task in Model)
-    {
-        <li id="eventHolder">
-            <div class="event-date-holder">
-                <span id="dateNumber">@task.EndDate.Day</span>
-                <span id="dateDay">jan</span>
-            </div>
-            <div class="event-details-holder">
-                <h1>@task.Title</h1>
-                <span id="eventDescription"> @task.FullDescription </span>
-                <div style="position:absolute; left:900px;">
-                    <ul id="editTools">
-                        <li><i class="fa fa-pencil-square-o"></i></li>
-                        <li><i class="fa fa-bars"></i></li>
-                        <li><i class="fa fa-times" id="removeEvent"></i></li>
-                    </ul>
+<div id="newEventForm">
+    <form method="post">
+        <label for="event-date">Event Date</label>
+        <input type="text" id="eventDate" class="hasDatepicker" name="eventDate">
+        <label for="event-title">Event Title</label>
+        <input type="text" name="eventTitle" id="eventTitleInput" maxlength="80">
+        <label for="event-description">Description</label>
+        <textarea name="eventDescription" id="eventDescriptionInput">Event Description</textarea>
+        <button name="add-event" form="newEventForm" id="addEvent">Add New Event</button>
+        <button name="cancel-add-event" id="cancelAddEvent">Cancel</button>
+    </form>
+</div>
+
+
+
+<div class="event-list-wrapper">
+    <ul>
+        @foreach (var task in Model)
+        {
+            <li id="eventHolder">
+                <div class="event-date-holder">
+                    <span id="dateNumber">@task.EndDate.Day</span>
+                    <span id="dateDay">jan</span>
                 </div>
-            </div>
-        </li>
-    }
-</ul>
+                <div class="event-details-holder">
+                    <h1>@task.Title</h1>
+                    <span id="eventDescription"> @task.FullDescription </span>
+                    <div style="position:absolute; left:900px;">
+                        <ul id="editTools">
+                            <li><i class="fa fa-pencil-square-o"></i></li>
+                            <li><i class="fa fa-bars"></i></li>
+                            <li><i class="fa fa-times" id="removeEvent"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

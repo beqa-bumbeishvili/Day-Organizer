@@ -1,16 +1,6 @@
 ﻿<link href="~/Content/login-style.css" type="text/css" rel="stylesheet" />
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.foot-lnk a').click(function () {
-            $.post('@Url.Action("Login","Account")', { userName: 'crespo', password: 'paroli' }, function (data)
-            {
-                $('.login-wrap').html(data);
-            })
-        });
-    });
-</script>
 <div class="login-wrap">
     <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
