@@ -119,7 +119,7 @@
         padding: 15px;
         margin-left: 20%;
         box-sizing: border-box;
-        display: none;
+        display: block;
     }
 
         #newEventForm label {
@@ -218,8 +218,6 @@
             color: #4c6a91;
             cursor: pointer;
         }
-
-
 </style>
 
 <script>
@@ -228,17 +226,10 @@
             $('.event-list-wrapper').toggleClass('top-margin-animation');
             if ($('.event-list-wrapper').hasClass('top-margin-animation')) {
                 $('.event-list-wrapper').animate({ 'margin-top': "300px" });
-                $('#newEventForm').css('display','block');
             }
-            else {
-                $('.event-list-wrapper').animate({ 'margin-top': "0px" });
-                $('#newEventForm').css('display','none');
-            }
+            else { $('.event-list-wrapper').animate({ 'margin-top': "0px" }); }
         });
 
-        $('#cancelAddEvent').click(function(){
-            $('newEventHolder').css('display','none');
-        });
     });
 </script>
 
@@ -255,7 +246,7 @@
         <label for="event-description">Description</label>
         <textarea name="eventDescription" id="eventDescriptionInput">Event Description</textarea>
         <button name="add-event" form="newEventForm" id="addEvent">Add New Event</button>
-        <button id="cancelAddEvent">Cancel</button>
+        <button name="cancel-add-event" id="cancelAddEvent">Cancel</button>
     </form>
 </div>
 
