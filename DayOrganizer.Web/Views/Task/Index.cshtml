@@ -259,6 +259,7 @@
 
 <div id="newEventForm">
     <form method="post">
+        @Html.AntiForgeryToken()
         <label for="event-date">Event Start Date</label>
         <input type="datetime-local" class="hasDatepicker" name="eventStartDate">
         <label for="event-date">Event End Date</label>

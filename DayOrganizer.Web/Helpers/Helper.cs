@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DayOrganizer.Web.Models;
 
 namespace DayOrganizer.Web.Helpers
 {
@@ -14,6 +15,11 @@ namespace DayOrganizer.Web.Helpers
             else if (DateTime.Now > end)
                 return "failed";
             return "active";
+        }
+        public static IEnumerable<Task> SortTasks(IEnumerable<Task> tasks)
+        {
+            tasks = tasks.Where(t => t.StartDate.Day == DateTime.Now.Day).OrderBy(t => t.StartDate);
+            return tasks;
         }
     }
 }

@@ -14,10 +14,10 @@ namespace DayOrganizer.Web.Controllers
         // GET: Task
         public ActionResult Index()
         {
-            var x = db.Tasks;
-            return View(x);
+            var SortedTasksByDate = Helper.SortTasks(db.Tasks);
+            return View(SortedTasksByDate);
         }
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Index(DateTime eventStartDate, DateTime eventEndDate, string eventTitle, string eventDescription)
         {
@@ -32,7 +32,8 @@ namespace DayOrganizer.Web.Controllers
                 db.Tasks.Add(Task);
                 db.SaveChanges();
             }
-            return View(db.Tasks);
+            var SortedTasksByDate = Helper.SortTasks(db.Tasks);
+            return View(SortedTasksByDate);
         }
 
     }
