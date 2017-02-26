@@ -12,7 +12,7 @@ namespace DayOrganizer.Web.Models
         {
         }
 
-        public virtual DbSet<Tasks> Tasks { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

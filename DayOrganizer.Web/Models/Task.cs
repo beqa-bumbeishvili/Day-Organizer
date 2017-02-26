@@ -6,7 +6,7 @@ namespace DayOrganizer.Web.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Tasks
+    public partial class Task
     {
         public int Id { get; set; }
 

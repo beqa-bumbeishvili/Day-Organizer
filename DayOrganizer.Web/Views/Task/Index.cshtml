@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<DayOrganizer.Web.Models.Tasks>
+﻿@model IEnumerable<DayOrganizer.Web.Models.Task>
 <style>
     #newEventHolder {
         margin-left: 20%;
@@ -130,6 +129,21 @@
             color: #244674;
         }
 
+        #newEventForm input[type="datetime-local"] {
+            padding-left: 15px;
+            margin-bottom: 20px;
+            height: 35px;
+            width: 100%;
+            line-height: 1.875;
+            font-size: 16px;
+            color: #A7C1D9;
+            border: 2px solid #C4DDF2;
+            outline: 0;
+            box-sizing: border-box;
+            background: #f6fafd;
+        }
+        
+
         #newEventForm input[type="text"] {
             padding-left: 15px;
             margin-bottom: 20px;
@@ -143,7 +157,6 @@
             box-sizing: border-box;
             background: #f6fafd;
         }
-
         #newEventForm textarea {
             margin-bottom: 20px;
             padding: 5px;
@@ -218,8 +231,6 @@
             color: #4c6a91;
             cursor: pointer;
         }
-
-
 </style>
 
 <script>
@@ -227,7 +238,6 @@
         $('#newEventHolder').click(function () {
             $('.event-list-wrapper').toggleClass('top-margin-animation');
             if ($('.event-list-wrapper').hasClass('top-margin-animation')) {
-                $('.event-list-wrapper').animate({ 'margin-top': "300px" });
                 $('#newEventForm').css('display','block');
             }
             else {
@@ -236,8 +246,9 @@
             }
         });
 
-        $('#cancelAddEvent').click(function(){
-            $('newEventHolder').css('display','none');
+        $('#cancelAddEvent').click(function () {
+            console.log('from jquery click');
+            $('#newEventForm').css('display', 'none');
         });
     });
 </script>
@@ -248,14 +259,16 @@
 
 <div id="newEventForm">
     <form method="post">
-        <label for="event-date">Event Date</label>
-        <input type="text" id="datetimepicker" class="hasDatepicker" name="eventDate">
+        <label for="event-date">Event Start Date</label>
+        <input type="datetime-local" class="hasDatepicker" name="eventStartDate">
+        <label for="event-date">Event End Date</label>
+        <input type="datetime-local" class="hasDatepicker" name="eventEndDate">
         <label for="event-title">Event Title</label>
         <input type="text" name="eventTitle" id="eventTitleInput" maxlength="80">
         <label for="event-description">Description</label>
-        <textarea name="eventDescription" id="eventDescriptionInput">Event Description</textarea>
-        <button name="add-event" form="newEventForm" id="addEvent">Add New Event</button>
-        <button id="cancelAddEvent">Cancel</button>
+        <textarea name="eventDescription" id="eventDescriptionInput"></textarea>
+        <button id="addEvent">Add New Event</button>
+        <button type="button" id="cancelAddEvent">Cancel</button>
     </form>
 </div>
 

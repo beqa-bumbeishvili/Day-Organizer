@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DayOrganizer.Web.Models;
+using DayOrganizer.Web.Helpers;
 
 namespace DayOrganizer.Web.Controllers
 {
@@ -18,10 +19,20 @@ namespace DayOrganizer.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string eventDate, string eventTitle, string eventDescription)
+        public ActionResult Index(DateTime eventStartDate, DateTime eventEndDate, string eventTitle, string eventDescription)
         {
-
-            return View();
+            if (!String.IsNullOrWhiteSpace(eventTitle) && !String.IsNullOrWhiteSpace(eventDescription))
+            {
+                Task Task = new Task();
+                Task.Title = eventTitle;
+                Task.FullDescription = eventDescription;
+                Task.StartDate = eventStartDate;
+                Task.EndDate = eventEndDate;
+                Task.CurrentStatus = Helper.GetCalculatedStatus(eventEndDate, eventEndDate);
+                db.Tasks.Add(Task);
+                db.SaveChanges();
+            }
+            return View(db.Tasks);
         }
 
     }
