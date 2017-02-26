@@ -281,7 +281,7 @@
             <li id="eventHolder">
                 <div class="event-date-holder">
                     <span id="dateNumber">@task.EndDate.Day</span>
-                    <span id="dateDay">jan</span>
+                    <span id="dateDay">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(task.StartDate.Month).Substring(0,3)</span>
                 </div>
                 <div class="event-details-holder">
                     <h1>@task.Title</h1>
